@@ -2408,10 +2408,9 @@ Note, that not all DRC settings must be set by the manufacturer. Several can be 
 <wire x1="16.73" y1="5.53" x2="15.9" y2="4.7" width="0.254" layer="16"/>
 <polygon width="0.254" layer="1" rank="2">
 <vertex x="0" y="0"/>
-<vertex x="30" y="0"/>
-<vertex x="30" y="30"/>
-<vertex x="0.68284375" y="30" curve="45"/>
-<vertex x="0" y="30"/>
+<vertex x="28" y="0"/>
+<vertex x="28" y="28"/>
+<vertex x="0" y="28"/>
 </polygon>
 <polygon width="0.254" layer="16">
 <vertex x="6" y="18"/>
