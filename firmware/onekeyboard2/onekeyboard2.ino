@@ -8,9 +8,11 @@
 
 // ---------------------------------------------
 
-#define DEBUG
+// #define DEBUG
 
 #define START_DELAY 5  // in seconds
+
+// pin mapping if treated as an Arduino Zero:
 
 #define PIN_BUTTON  10 // PA18
 #define PIN_LED     A5 // PB02
@@ -18,6 +20,7 @@
 // ---------------------------------------------
 
 int buttonPrevState = LOW;
+int button;
 
 void setup() {
 
@@ -35,25 +38,16 @@ void setup() {
         delay(500);
     }
 
-    // #ifdef DEBUG
-    //     while (!SERIAL_PORT) {;}
-    //     DEBUG_PRINT("INIT 2");
-    // #endif
-
-    // Keyboard.begin();
-    // Keyboard.end();
+    #ifdef DEBUG
+        while (!SERIAL_PORT) {;}
+    #endif
 }
 
 void loop() {
 
-    int button = digitalRead(PIN_BUTTON);
+    button = digitalRead(PIN_BUTTON);
 
     if (buttonPrevState == LOW && button == HIGH) {
-
-        // Keyboard.press('b');
-        // delay(10);
-        // Keyboard.releaseAll();
-        // delay(500);
 
         Keyboard.begin();
 
@@ -71,8 +65,6 @@ void loop() {
         digitalWrite(PIN_LED, LOW);
 
         Keyboard.end();
-
-        // SerialUSB.println(digitalRead(PIN_BUTTON));
     }
 
     buttonPrevState = button;
